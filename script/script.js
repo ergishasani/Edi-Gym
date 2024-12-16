@@ -16,23 +16,35 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
 document.addEventListener("DOMContentLoaded", () => {
     const faqItems = document.querySelectorAll(".faq-item");
 
     faqItems.forEach((item) => {
         const question = item.querySelector(".faq-question");
+        const answer = item.querySelector(".faq-answer");
+        const toggleIcon = item.querySelector(".faq-toggle");
 
         question.addEventListener("click", () => {
-            // Close all open FAQs
+            // Close other open FAQs
             faqItems.forEach((faq) => {
-                if (faq !== item) {
-                    faq.classList.remove("open");
+                if (faq !== item && faq.classList.contains("active")) {
+                    faq.classList.remove("active");
+                    faq.querySelector(".faq-answer").style.maxHeight = null;
+                    faq.querySelector(".faq-toggle").textContent = "▼";
                 }
             });
 
             // Toggle current FAQ
-            item.classList.toggle("open");
+            if (item.classList.contains("active")) {
+                item.classList.remove("active");
+                answer.style.maxHeight = null; // Collapse the answer
+                toggleIcon.textContent = "▼";
+            } else {
+                item.classList.add("active");
+                answer.style.maxHeight = answer.scrollHeight + "px"; // Expand the answer
+                toggleIcon.textContent = "▲";
+            }
         });
     });
 });
+
