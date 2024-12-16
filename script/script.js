@@ -1,26 +1,17 @@
+document.addEventListener("DOMContentLoaded", function () {
+    const boysBtn = document.getElementById("boys-btn");
+    const girlsBtn = document.getElementById("girls-btn");
+    const carousel = document.getElementById("carousel");
 
-    document.addEventListener("DOMContentLoaded", () => {
-        const observerOptions = {
-            threshold: 0.2, // Trigger when 20% of the element is visible
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    if (entry.target.classList.contains("slide-left")) {
-                        entry.target.classList.add("show-left");
-                    } else if (entry.target.classList.contains("slide-right")) {
-                        entry.target.classList.add("show-right");
-                    } else {
-                        entry.target.classList.add("show");
-                    }
-                    observer.unobserve(entry.target); // Stop observing once shown
-                }
-            });
-        }, observerOptions);
-
-        // Add observer to elements
-        document.querySelectorAll(".hidden, .slide-left, .slide-right").forEach(el => {
-            observer.observe(el);
-        });
+    boysBtn.addEventListener("click", () => {
+        carousel.style.transform = "translateX(0%)";
+        boysBtn.classList.add("active");
+        girlsBtn.classList.remove("active");
     });
+
+    girlsBtn.addEventListener("click", () => {
+        carousel.style.transform = "translateX(-100%)";
+        girlsBtn.classList.add("active");
+        boysBtn.classList.remove("active");
+    });
+});
