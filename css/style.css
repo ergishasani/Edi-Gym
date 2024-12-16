@@ -1,0 +1,104 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+/* Root Section for Font Variables */
+:root {
+    --font-heading: 'Bebas Neue', sans-serif;
+    /* Titles */
+    --font-subheading: 'Oswald', sans-serif;
+    /* Subheadings */
+    --font-highlight: 'Anton', sans-serif;
+    /* Highlights */
+    --font-body: 'Poppins', sans-serif;
+    /* Body Text */
+    --font-alt-heading: 'Montserrat', sans-serif;
+    /* Alternate Titles */
+    --font-alt-body: 'Roboto', sans-serif;
+    /* Alternative Body */
+    --font-readable: 'Open Sans', sans-serif;
+    /* Long paragraphs */
+    --font-subtle: 'Lato', sans-serif;
+    /* Subtle Text */
+    --font-creative: 'Nunito', sans-serif;
+    /* Creative Text */
+
+    --color-primary: #FF6B35;
+    /* Vibrant Orange - Buttons and Highlights */
+    --color-secondary: #0D0D0D;
+    /* Deep Black - Background */
+    --color-neutral-light: #FFFFFF;
+    /* Pure White - Text and Highlights */
+    --color-neutral-dark: #333333;
+    /* Dark Gray - Subtext and borders */
+    --color-accent: #1C1C1C;
+    /* Slightly lighter black - Section backgrounds */
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--color-secondary);
+}
+
+/* Header Section */
+header {
+    width: 100%;
+    height: 8rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lists {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+
+}
+
+.list a {
+    text-decoration: none;
+}
+
+/* Hero Section */
+
+
+
+
+.hero {
+    height: 100vh;
+    width: 100%;
+}
+
+
+.form {
+    width: 30rem;
+    display: flex;
+    flex-direction: row;
+}
+
+input {
+    color: var(--color-primary);
+
+}
