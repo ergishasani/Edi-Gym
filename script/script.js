@@ -1,28 +1,26 @@
-const carousel = document.querySelector('.carousel');
-const nextBtn = document.querySelector('.carousel-next');
-const prevBtn = document.querySelector('.carousel-prev');
-let offset = 0;
 
-nextBtn.addEventListener('click', () => {
-    if (offset > -(carousel.scrollWidth - carousel.clientWidth)) {
-        offset -= carousel.clientWidth / 6; // Move by one item width
-        carousel.style.transform = `translateX(${offset}px)`;
-    }
-});
+    document.addEventListener("DOMContentLoaded", () => {
+        const observerOptions = {
+            threshold: 0.2, // Trigger when 20% of the element is visible
+        };
 
-prevBtn.addEventListener('click', () => {
-    if (offset < 0) {
-        offset += carousel.clientWidth / 6;
-        carousel.style.transform = `translateX(${offset}px)`;
-    }
-});
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.classList.contains("slide-left")) {
+                        entry.target.classList.add("show-left");
+                    } else if (entry.target.classList.contains("slide-right")) {
+                        entry.target.classList.add("show-right");
+                    } else {
+                        entry.target.classList.add("show");
+                    }
+                    observer.unobserve(entry.target); // Stop observing once shown
+                }
+            });
+        }, observerOptions);
 
-// Auto Slide every 5 seconds
-setInterval(() => {
-    if (offset > -(carousel.scrollWidth - carousel.clientWidth)) {
-        offset -= carousel.clientWidth / 6;
-    } else {
-        offset = 0; // Reset when it reaches the end
-    }
-    carousel.style.transform = `translateX(${offset}px)`;
-}, 5000);
+        // Add observer to elements
+        document.querySelectorAll(".hidden, .slide-left, .slide-right").forEach(el => {
+            observer.observe(el);
+        });
+    });

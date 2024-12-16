@@ -216,7 +216,7 @@ header {
     margin-bottom: 2rem;
 }
 
-.fitness-category p {
+.section-title-p {
     font-size: 1.6rem;
     width: 60%;
     margin: 0 auto;
@@ -275,6 +275,7 @@ header {
     font-size: 14px;
     color: #DDDDDD;
     margin-bottom: 20px;
+    
 }
 
 .card-button {
