@@ -78,7 +78,7 @@ body {
     font-family: 'Poppins', sans-serif;
     position: fixed;
     z-index: 1000;
-    
+
 }
 
 .gym-name {
@@ -517,7 +517,7 @@ body {
     box-shadow: 0 6px 15px rgba(255, 107, 53, 0.6);
 }
 
-.plan-name {
+.plan-name, .all_plans {
     color: var(--color-primary);
     font-size: 22px;
     margin-bottom: 10px;
@@ -918,8 +918,37 @@ body {
 
     }
 
-    .compare-table {
-        display: none;
+    .pricing-compare {
+        margin-top: 20px;
     }
 
+    .compare-table th,
+    .compare-table td {
+        border: 1px solid var(--color-neutral-dark);
+        padding: 5px;
+        text-align: center;
+    }
+
+    .compare-table th {
+        background-color: var(--color-accent);
+        color: var(--color-primary);
+        font-size: 1rem;
+    }
+
+    .compare-table td {
+        background-color: #121212;
+        font-size: 1rem;
+    }
+
+    .compare-table tr:nth-child(even) td {
+        background-color: var(--color-accent);
+    }
+
+    .all_plans {
+        font-size: 1.5rem;
+        
+    }
+.pricing-compare{
+    margin-bottom: 2rem;
+}
 }
