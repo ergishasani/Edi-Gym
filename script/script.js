@@ -15,3 +15,24 @@ document.addEventListener("DOMContentLoaded", function () {
         boysBtn.classList.remove("active");
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach((item) => {
+        const question = item.querySelector(".faq-question");
+
+        question.addEventListener("click", () => {
+            // Close all open FAQs
+            faqItems.forEach((faq) => {
+                if (faq !== item) {
+                    faq.classList.remove("open");
+                }
+            });
+
+            // Toggle current FAQ
+            item.classList.toggle("open");
+        });
+    });
+});

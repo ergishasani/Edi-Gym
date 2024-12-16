@@ -64,25 +64,120 @@ body {
 }
 
 /* Header Section */
-header {
+/* General Header Styling */
+.hero-header {
     width: 100%;
     height: 8rem;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding: 0 20px;
+    background-color: #121212;
+    /* Dark background */
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    position: fixed;
+    z-index: 1000;
+    
 }
 
-.lists {
+.gym-name {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-primary);
+    text-transform: uppercase;
+}
+
+.nav-lists {
     display: flex;
-    flex-direction: row;
     list-style: none;
-
+    gap: 2rem;
 }
 
-.list a {
+.nav-lists .nav-link {
     text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    transition: color 0.3s ease;
 }
+
+.nav-lists .nav-link:hover {
+    color: var(--color-primary);
+}
+
+/* Burger Menu Styling */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1001;
+    /* Ensure it’s above the menu */
+}
+
+.burger-menu span.line {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-primary);
+    transition: all 0.3s ease;
+}
+
+/* Burger Menu Open (X Animation) */
+.burger-menu.open .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger-menu.open .line:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.open .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Navigation for Mobile */
+@media screen and (max-width: 768px) {
+    .burger-menu {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background-color: var(--color-accent);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: right 0.3s ease;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-lists {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 0;
+    }
+
+    .nav-item {
+        list-style: none;
+    }
+
+    .nav-link {
+        color: #fff;
+        font-size: 2.2rem !important;
+        text-decoration: none;
+        font-weight: bold;
+    }
+}
+
 
 /* Hero Section */
 
@@ -90,11 +185,11 @@ header {
 
 /* Hero Section Styles */
 .hero {
-    background-color: #0D0D0D;
+    background-color: var(--color-secondary);
     /* Dark background */
-    color: #FFFFFF;
+    color: var(--color-neutral-light);
     /* White text */
-    padding: 60px 20px;
+    height: 100vh;
     text-align: center;
     position: relative;
     width: 100%;
@@ -112,7 +207,7 @@ header {
 .gym-name {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 28px;
-    color: #FF6B35;
+    color: var(--color-primary);
     /* Orange Highlight */
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -127,7 +222,7 @@ header {
 }
 
 .nav-link {
-    color: #FFFFFF;
+    color: var(--color-neutral-light);
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
     text-decoration: none;
@@ -135,7 +230,7 @@ header {
 }
 
 .nav-link:hover {
-    color: #FF6B35;
+    color: var(--color-primary);
     /* Orange on hover */
 }
 
@@ -181,9 +276,9 @@ header {
 }
 
 .hero-button {
-    background-color: #FF6B35;
+    background-color: var(--color-primary);
     /* Orange Button */
-    color: #FFFFFF;
+    color: var(--color-neutral-light);
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
     font-weight: bold;
@@ -207,7 +302,7 @@ header {
 .fitness-category {
     background-color: #121212;
     /* Dark background */
-    color: #FFFFFF;
+    color: var(--color-neutral-light);
     padding: 60px 20px;
     text-align: center;
     width: 98%;
@@ -228,7 +323,7 @@ header {
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #FF6B35;
+    color: var(--color-primary);
     /* Orange highlight */
 }
 
@@ -243,7 +338,7 @@ header {
 
 /* Card Styling */
 .category-card {
-    background-color: #1C1C1C;
+    background-color: var(--color-accent);
     /* Slightly lighter black */
     padding: 25px;
     border-radius: 10px;
@@ -261,7 +356,7 @@ header {
 .card-icon {
     font-size: 40px;
     margin-bottom: 15px;
-    color: #FF6B35;
+    color: var(--color-primary);
     /* Orange Highlight */
 }
 
@@ -279,9 +374,9 @@ header {
 }
 
 .card-button {
-    background-color: #FF6B35;
+    background-color: var(--color-primary);
     /* Orange Button */
-    color: #FFFFFF;
+    color: var(--color-neutral-light);
     border: none;
     padding: 10px 20px;
     font-size: 14px;
@@ -312,7 +407,7 @@ header {
 .fitness-progress {
     background-color: #121212;
     /* Dark background */
-    color: #FFFFFF;
+    color: var(--color-neutral-light);
     /* White text */
     padding: 60px 20px;
     position: relative;
@@ -379,7 +474,7 @@ header {
 /* Pricing Section */
 .pricing-plans {
     background-color: #121212;
-    color: #FFFFFF;
+    color: var(--color-neutral-light);
     padding: 60px 20px;
     font-family: 'Poppins', sans-serif;
     text-align: center;
@@ -389,7 +484,7 @@ header {
 
 .section-title {
     font-size: 36px;
-    color: #FF6B35;
+    color: var(--color-primary);
     margin-bottom: 10px;
 }
 
@@ -409,7 +504,7 @@ header {
 }
 
 .pricing-card {
-    background-color: #1C1C1C;
+    background-color: var(--color-accent);
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
@@ -423,14 +518,14 @@ header {
 }
 
 .plan-name {
-    color: #FF6B35;
+    color: var(--color-primary);
     font-size: 22px;
     margin-bottom: 10px;
 }
 
 .plan-price {
     font-size: 26px;
-    color: #FFFFFF;
+    color: var(--color-neutral-light);
     margin: 10px 0;
 }
 
@@ -459,8 +554,16 @@ header {
     padding-left: 1rem;
 }
 
+.plan_li {
+    margin-bottom: 3.2rem !important;
+}
+
+.plan_li_2nd {
+    margin-bottom: 3.2rem !important;
+}
+
 .plan-button {
-    background-color: #FF6B35;
+    background-color: var(--color-primary);
     color: #121212;
     border: none;
     border-radius: 5px;
@@ -481,7 +584,7 @@ header {
 
 .compare-title {
     font-size: 24px;
-    color: #FF6B35;
+    color: var(--color-primary);
     margin-bottom: 20px;
 }
 
@@ -490,19 +593,19 @@ header {
     max-width: 1000px;
     margin: 0 auto;
     border-collapse: collapse;
-    color: #FFFFFF;
+    color: var(--color-neutral-light);
 }
 
 .compare-table th,
 .compare-table td {
-    border: 1px solid #333333;
+    border: 1px solid var(--color-neutral-dark);
     padding: 10px;
     text-align: center;
 }
 
 .compare-table th {
-    background-color: #1C1C1C;
-    color: #FF6B35;
+    background-color: var(--color-accent);
+    color: var(--color-primary);
     font-size: 2rem;
 }
 
@@ -512,17 +615,185 @@ header {
 }
 
 .compare-table tr:nth-child(even) td {
-    background-color: #1C1C1C;
+    background-color: var(--color-accent);
 }
 
+/* Trainer Section */
+
+.meet-trainers {
+    background-color: #121212;
+    color: var(--color-neutral-light);
+    padding: 60px 20px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    width: 98%;
+    margin-top: 2rem;
+    border-radius: 1rem;
+}
+
+.section-title {
+    font-size: 36px;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+.section-description {
+    font-size: 16px;
+    color: #DDDDDD;
+    margin-bottom: 40px;
+    max-width: 79rem;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+}
+
+/* Grid Layout */
+.trainers-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Trainer Card */
+.trainer-card {
+    background-color: var(--color-accent);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 300px;
+    text-align: left;
+}
+
+.trainer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(255, 107, 53, 0.6);
+}
+
+.trainer-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.trainer-details {
+    padding: 20px;
+}
+
+.trainer-name {
+    font-size: 20px;
+    color: var(--color-primary);
+    margin-bottom: 5px;
+}
+
+.trainer-specialty {
+    font-size: 14px;
+    color: #BBBBBB;
+    margin-bottom: 15px;
+}
+
+.trainer-bio {
+    font-size: 14px;
+    color: #DDDDDD;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.trainer-button {
+    background-color: var(--color-primary);
+    color: #121212;
+    font-weight: bold;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.trainer-button:hover {
+    background-color: #E65A2A;
+}
+
+
+
+/* Map Section */
+/* General Styling */
+.map-location {
+    width: 98%;
+    padding: 40px 20px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-neutral-light);
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-neutral-light);
+    margin-bottom: 20px;
+}
+
+/* Map Container Styling */
+.map-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+}
+
+.map-frame {
+    width: 100%;
+    height: 450px;
+    border: none;
+    filter: grayscale(1) contrast(1.2);
+}
+
+/* Overlay Section */
+.map-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: rgba(0, 0, 0, 0.7);
+    color: var(--color-neutral-light);
+    box-sizing: border-box;
+}
+
+.map-text {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.map-button {
+    background-color: var(--color-primary);
+    color: #121212;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.map-button:hover {
+    background-color: #E65A2A;
+}
 
 
 
 /* General Footer Styling */
 .footer {
-    background-color: #0D0D0D;
+    background-color: var(--color-secondary);
     /* Dark background */
-    color: #FFFFFF;
+    color: var(--color-neutral-light);
     /* White text */
     padding: 50px 20px;
     font-family: 'Poppins', sans-serif;
@@ -548,11 +819,11 @@ header {
     font-size: 36px;
     letter-spacing: 2px;
     margin-bottom: 10px;
-    color: #FFFFFF;
+    color: var(--color-neutral-light);
 }
 
 .highlight {
-    color: #FF6B35;
+    color: var(--color-primary);
     /* Orange Highlight */
 }
 
@@ -579,7 +850,7 @@ header {
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 15px;
-    color: #FFFFFF;
+    color: var(--color-neutral-light);
     text-transform: uppercase;
 }
 
@@ -602,7 +873,7 @@ header {
 }
 
 .footer-column ul li a:hover {
-    color: #FF6B35;
+    color: var(--color-primary);
     /* Orange hover */
 }
 
@@ -613,7 +884,7 @@ header {
 }
 
 .footer-social li a {
-    color: #FF6B35;
+    color: var(--color-primary);
     /* Orange for social icons */
     text-decoration: none;
     font-size: 14px;
@@ -621,7 +892,7 @@ header {
 
 /* Footer Bottom */
 .footer-bottom {
-    border-top: 1px solid #333333;
+    border-top: 1px solid var(--color-neutral-dark);
     margin-top: 30px;
     padding-top: 20px;
     text-align: center;
@@ -630,12 +901,25 @@ header {
 }
 
 .footer-bottom a {
-    color: #FFFFFF;
+    color: var(--color-neutral-light);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .footer-bottom a:hover {
-    color: #FF6B35;
+    color: var(--color-primary);
     /* Orange hover */
+}
+
+@media screen and (max-width: 768px) {
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .compare-table {
+        display: none;
+    }
+
 }
