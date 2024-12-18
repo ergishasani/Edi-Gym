@@ -86,7 +86,7 @@ window.addEventListener('load', () => {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    const sections = document.querySelectorAll("section");
+    const sections = document.querySelectorAll(".section");
 
     const revealSection = (entries, observer) => {
         entries.forEach(entry => {
