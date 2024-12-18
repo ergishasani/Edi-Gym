@@ -1073,6 +1073,34 @@ header {
     color: var(--color-primary);
 }
 
+/* Phone Link Styling */
+.contact-phone {
+    color: var(--color-neutral-light);
+    /* Use your primary color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-phone:hover {
+    color: #e05500;
+    /* Slightly darker orange for hover effect */
+    text-decoration: underline;
+}
+
+/* Address Link Styling */
+.contact-address {
+    color: var(--color-neutral-light);
+    /* Use your site's primary color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-address:hover {
+    color: #e05500;
+    /* Slightly darker orange for hover */
+    text-decoration: underline;
+}
+
 @media (max-width: 768px) {
     .contact-content {
         flex-direction: column;
@@ -1082,7 +1110,8 @@ header {
     .contact-details {
         text-align: center;
     }
-    .form-group{
+
+    .form-group {
         width: 33rem;
     }
 }
