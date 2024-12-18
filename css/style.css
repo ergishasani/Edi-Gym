@@ -317,6 +317,7 @@ header {
     border-radius: 1rem;
     margin: 40px auto;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    margin-bottom: 2rem !important;
 }
 
 .about-container {
