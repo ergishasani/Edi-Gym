@@ -199,6 +199,9 @@ header {
     text-align: center;
     position: relative;
     width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
 
 .hero_link {
@@ -212,6 +215,7 @@ header {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 40px;
+    top: 0;
 }
 
 .gym-name {
@@ -246,7 +250,7 @@ header {
 
 /* Hero Content */
 .hero-content {
-    max-width: 800px;
+    max-width: 60%;
     margin: 0 auto;
 }
 
@@ -265,43 +269,6 @@ header {
     color: #CCCCCC;
     /* Light gray */
     margin-bottom: 30px;
-}
-
-/* Email Form */
-.hero-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-
-.hero-input {
-    width: 60%;
-    padding: 10px 15px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    outline: none;
-}
-
-.hero-button {
-    background-color: var(--color-primary);
-    /* Orange Button */
-    color: var(--color-neutral-light);
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.hero-button:hover {
-    background-color: #E65A2A;
-    /* Darker Orange on Hover */
 }
 
 
@@ -425,6 +392,13 @@ header {
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-button {
+    margin-top: auto;
 }
 
 .category-card:hover {
