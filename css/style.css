@@ -1082,6 +1082,9 @@ header {
     .contact-details {
         text-align: center;
     }
+    .form-group{
+        width: 33rem;
+    }
 }
 
 
