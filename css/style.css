@@ -1107,13 +1107,16 @@ header {
         text-align: center;
     }
 
+    form {
+        width: 100%;
+    }
+
     .contact-details {
         text-align: center;
     }
 
-    .form-group {
-        width: 33rem;
-    }
+
+
 }
 
 
@@ -1149,7 +1152,6 @@ header {
     font-size: 36px;
     letter-spacing: 2px;
     margin-bottom: 10px;
-    margin-left: 3rem;
     color: var(--color-neutral-light);
 }
 
@@ -1247,6 +1249,11 @@ header {
         display: flex;
         flex-direction: column;
 
+
+    }
+
+    .footer-logo {
+        margin-left: 3rem;
     }
 
     .pricing-compare {
