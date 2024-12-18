@@ -1,0 +1,138 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Root Variables */
+:root {
+    --font-heading: 'Bebas Neue', sans-serif;
+    --font-body: 'Poppins', sans-serif;
+    --color-primary: #FF6B35;
+    --color-secondary: #0D0D0D;
+    --color-neutral-light: #FFFFFF;
+    --color-neutral-dark: #333333;
+    --color-accent: #1C1C1C;
+}
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-secondary);
+    color: var(--color-neutral-light);
+    line-height: 1.6;
+    padding: 0 20px;
+}
+
+/* Section Styling */
+section {
+    padding: 60px 20px;
+    background-color: var(--color-secondary);
+    border-radius: 10px;
+    margin: 20px auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    width: 98%;
+    max-width: 1200px;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.section-description {
+    font-size: 1.6rem;
+    color: #CCCCCC;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Membership Cards */
+.membership-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.membership-card {
+    background-color: var(--color-accent);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.membership-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(255, 107, 53, 0.6);
+}
+
+.membership-title {
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.membership-price {
+    font-size: 1.8rem;
+    color: var(--color-neutral-light);
+    margin-bottom: 15px;
+}
+
+.membership-details {
+    font-size: 1.4rem;
+    color: #CCCCCC;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.membership-button {
+    background-color: var(--color-primary);
+    color: var(--color-neutral-light);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.membership-button:hover {
+    background-color: #E65A2A;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .membership-card {
+        padding: 15px;
+    }
+
+    .membership-title {
+        font-size: 1.8rem;
+    }
+
+    .membership-price {
+        font-size: 1.6rem;
+    }
+
+    .membership-details {
+        font-size: 1.2rem;
+    }
+}
