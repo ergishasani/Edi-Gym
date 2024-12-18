@@ -50,3 +50,56 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+// Smooth scroll for same-page navigation
+const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
+smoothScrollLinks.forEach(link => {
+    link.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent default anchor click behavior
+
+        const targetId = this.getAttribute('href').substring(1); // Get the ID without the '#'
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Smooth scroll for navigation between pages
+window.addEventListener('load', () => {
+    const hash = window.location.hash;
+    if (hash) {
+        const targetElement = document.querySelector(hash);
+        if (targetElement) {
+            setTimeout(() => {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }, 0); // Wait for the page to load before scrolling
+        }
+    }
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("section");
+
+    const revealSection = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(revealSection, {
+        threshold: 0.1,
+    });
+
+    sections.forEach(section => observer.observe(section));
+});

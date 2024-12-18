@@ -240,12 +240,29 @@ header {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
     text-decoration: none;
+    position: relative;
     transition: color 0.3s;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    /* Adjust to position the line */
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: width 0.3s ease;
 }
 
 .nav-link:hover {
     color: var(--color-primary);
     /* Orange on hover */
+}
+
+.nav-link:hover::after {
+    width: 100%;
 }
 
 /* Hero Content */
@@ -1246,12 +1263,29 @@ header {
     /* Light gray links */
     text-decoration: none;
     font-size: 14px;
+    position: relative;
     transition: color 0.3s ease;
+}
+
+.footer-column ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    /* Adjust to position the line */
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: width 0.3s ease;
 }
 
 .footer-column ul li a:hover {
     color: var(--color-primary);
     /* Orange hover */
+}
+
+.footer-column ul li a:hover::after {
+    width: 100%;
 }
 
 /* Social Media Links */
@@ -1265,6 +1299,23 @@ header {
     /* Orange for social icons */
     text-decoration: none;
     font-size: 14px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.footer-social li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: width 0.3s ease;
+}
+
+.footer-social li a:hover::after {
+    width: 100%;
 }
 
 /* Footer Bottom */
@@ -1280,13 +1331,30 @@ header {
 .footer-bottom a {
     color: var(--color-neutral-light);
     text-decoration: none;
+    position: relative;
     transition: color 0.3s ease;
+}
+
+.footer-bottom a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: width 0.3s ease;
 }
 
 .footer-bottom a:hover {
     color: var(--color-primary);
     /* Orange hover */
 }
+
+.footer-bottom a:hover::after {
+    width: 100%;
+}
+
 
 @media screen and (max-width: 768px) {
     .footer-links {
@@ -1342,4 +1410,29 @@ header {
     .footer-brand {
         max-width: 100%;
     }
+}
+
+/* Add animations for sections to appear on scroll */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* General animation class */
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
