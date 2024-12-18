@@ -1252,9 +1252,7 @@ header {
 
     }
 
-    .footer-logo {
-        margin-left: 3rem;
-    }
+ 
 
     .pricing-compare {
         margin-top: 20px;
@@ -1295,5 +1293,9 @@ header {
     .footer-logo,
     .footer-description {
         text-align: center;
+    }
+
+    .footer-brand {
+        max-width: 100%;
     }
 }
