@@ -61,8 +61,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: var(--font-body);
+    color: var(--color-neutral-light);
 }
-img, h2, header{
+
+
+img,
+h2,
+header {
     user-select: none;
 }
 
@@ -725,7 +731,7 @@ img, h2, header{
 
 /* Map Section */
 .map-location {
-    
+
     width: 98%;
     padding: 40px 20px;
     text-align: center;
@@ -868,6 +874,98 @@ img, h2, header{
 
 .faq-item.open .faq-toggle {
     transform: rotate(180deg);
+}
+
+
+/* Quote Section */
+.quote-section {
+    position: relative;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    margin: 50px auto;
+    width: 98%;
+    background-color: #121212;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Background Image for Lines */
+.background-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/img/lines.png');
+    /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    /* Adjust for subtle effect */
+    z-index: 1;
+    pointer-events: none;
+    /* Prevent the image from blocking clicks */
+}
+
+.quote-container {
+    text-align: center;
+    z-index: 2;
+    position: relative;
+}
+
+.quote-title {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    font-weight: bold;
+    margin: 0 0 15px;
+}
+
+.quote-subtitle {
+    font-size: 1.5rem;
+    color: #bbb;
+    margin-bottom: 25px;
+}
+
+.quote-button {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 25px;
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.quote-button:hover {
+    background-color: #e05500;
+}
+
+.quote-text p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .quote-section {
+        height: 450px;
+    }
+
+    .quote-text{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .quote-text p {
+        font-size: 1.1rem;
+        max-width: 90%;
+    }
 }
 
 
