@@ -570,17 +570,19 @@ header {
     display: flex;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap;
     margin-bottom: 40px;
 }
 
 .pricing-card {
-    background-color: var(--color-accent);
+    background-color: #282828;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 300px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .pricing-card:hover {
@@ -588,15 +590,14 @@ header {
     box-shadow: 0 6px 15px rgba(255, 107, 53, 0.6);
 }
 
-.plan-name,
-.all_plans {
+.plan-name {
     color: var(--color-primary);
-    font-size: 22px;
+    font-size: 24px;
     margin-bottom: 10px;
 }
 
 .plan-price {
-    font-size: 26px;
+    font-size: 28px;
     color: var(--color-neutral-light);
     margin: 10px 0;
 }
@@ -610,28 +611,24 @@ header {
     color: #DDDDDD;
     margin-bottom: 15px;
     font-size: 14px;
+    text-align: center;
 }
 
 .plan-features {
     list-style: none;
     padding: 0;
     color: #DDDDDD;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     text-align: left;
+    width: 100%;
+    margin-left: 6rem;
 }
 
 .plan-features li {
     margin: 5px 0;
-    font-size: 1.4rem;
+    font-size: 16px;
     padding-left: 1rem;
-}
-
-.plan_li {
-    margin-bottom: 3.2rem !important;
-}
-
-.plan_li_2nd {
-    margin-bottom: 3.2rem !important;
+    position: relative;
 }
 
 .plan-button {
@@ -643,52 +640,153 @@ header {
     cursor: pointer;
     font-weight: bold;
     transition: background-color 0.3s ease;
+    align-self: center;
+    margin-top: auto;
 }
 
 .plan-button:hover {
     background-color: #E65A2A;
 }
 
-/* Compare Table */
-.pricing-compare {
-    margin-top: 20px;
-    margin-bottom: 2rem;
-}
-
-.compare-title {
-    font-size: 24px;
+.membership_btn {
     color: var(--color-primary);
-    margin-bottom: 20px;
+    font-size: 2.3rem;
 }
 
-.compare-table {
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-    border-collapse: collapse;
-    color: var(--color-neutral-light);
-}
-
-.compare-table th,
-.compare-table td {
-    border: 1px solid var(--color-neutral-dark);
-    padding: 10px;
+/* Weekly Schedule Section */
+.weekly-schedule {
+    margin: 20px auto;
     text-align: center;
+    padding: 10px;
 }
 
-.compare-table th {
-    background-color: var(--color-accent);
-    color: var(--color-primary);
-    font-size: 2rem;
+.schedule-title {
+    font-size: 22px;
+    color: #FF6B35;
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
 }
 
-.compare-table td {
-    background-color: #121212;
-    font-size: 1.5rem;
+.schedule-table {
+    margin: 0 auto;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: auto;
+    /* Ensure horizontal scrolling for smaller screens */
+    display: block;
+    /* Make it flexible for mobile view */
 }
 
-.compare-table tr:nth-child(even) td {
-    background-color: var(--color-accent);
+.schedule-table th,
+.schedule-table td {
+    padding: 12px 8px;
+    text-align: center;
+    border: 1px solid #444;
+    font-size: 12px;
+    color: #FFF;
+    white-space: nowrap;
+    /* Prevent text wrapping */
+}
+
+.schedule-table th {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #FF6B35;
+    border-bottom: 2px solid #FF6B35;
+}
+
+.schedule-table td {
+    background-color: rgba(255, 255, 255, 0.05);
+    position: relative;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+.schedule-table td a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #FF6B35;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.schedule-table td:hover a {
+    color: #FFF;
+}
+
+.schedule-table td:hover {
+    background-color: #FF6B35;
+    color: #FFF;
+}
+
+.schedule-table tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.schedule-table tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .weekly-schedule {
+        padding: 8px;
+    }
+
+    .schedule-title {
+        font-size: 18px;
+        /* Slightly smaller for mid-sized screens */
+        margin-bottom: 8px;
+    }
+
+    .schedule-table {
+        font-size: 12px;
+        /* Adjust font size for better readability */
+        width: 100%;
+        overflow-x: auto;
+        /* Ensure table scrolls horizontally if needed */
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+        padding: 8px 4px;
+        /* Compact padding for smaller screens */
+        font-size: 12px;
+        /* Ensure text remains legible */
+    }
+
+    .schedule-table th {
+        font-size: 12px;
+        /* Consistent with table cells */
+    }
+
+    .schedule-table td a {
+        font-size: 12px;
+        /* Link size matches cell text size */
+    }
+
+    .schedule-table td:hover {
+        background-color: #FF6B35;
+        color: #FFF;
+    }
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 425px) {
+    .schedule-title {
+    display: none;
+    }
+
+    .schedule-table {
+      display: none;
+    }
+.weekly-schedule{
+    display: none;
+}
 }
 
 /* Trainer Section */
@@ -1395,6 +1493,15 @@ header {
     .footer-brand {
         max-width: 100%;
     }
+
+
+    /* Membership */
+    .pricing-cards {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+
 }
 
 /* Add animations for sections to appear on scroll */

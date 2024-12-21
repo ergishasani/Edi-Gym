@@ -103,3 +103,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     sections.forEach(section => observer.observe(section));
 });
+
+
+
+// Ensure entire cell redirects on hover and click
+const classLinks = document.querySelectorAll(".highlight");
+classLinks.forEach(link => {
+    const cell = link.closest("td");
+    cell.addEventListener("click", () => {
+        window.location.href = link.href;
+    });
+    cell.style.cursor = "pointer";
+});
